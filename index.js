@@ -51,12 +51,12 @@ const links = await URLs.getURLs();
 for( const linkObj of links ){
 
 	const link 				= linkObj.link;
-	const Location			= linkObj.location;
+	const location			= linkObj.location;
 	// goto
 	
 	
 	try{
-		await page.goto( link, { timeout: 90000 } );
+		await page.goto( link, { timeout: 180000 } );
 		await page.waitForXPath( 'title' );
 console.log( "---- ! Fully loaded !" );
 	}
