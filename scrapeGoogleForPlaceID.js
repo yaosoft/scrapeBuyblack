@@ -100,6 +100,7 @@ console.error( 'itemButtonX: ' + itemButtonX );
         catch(err){
             console.error( '!!!!!!! COMPANY NOT FOUND ON GOOGLE !!' );
             await resolve(dataObj);
+			return dataObj;
         }
         
         // get the data
