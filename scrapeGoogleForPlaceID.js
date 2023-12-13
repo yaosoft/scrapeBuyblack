@@ -62,10 +62,11 @@ const getData = async () => {
         
         // Open the item's google search page
 		try{
-			await itemPage.goto( link, { timeout: 10000 });
+			await itemPage.goto( link, { timeout: 60000 });
 		}
 		catch(err){
-			console.log( 'Unable to open ' + link )
+			console.error( 'Unable to open ' + link );
+			return dataObj ;
 		}
 
         // Click on the item.s link if needed
@@ -100,7 +101,6 @@ console.error( 'itemButtonX: ' + itemButtonX );
         catch(err){
             console.error( '!!!!!!! COMPANY NOT FOUND ON GOOGLE !!' );
             await resolve(dataObj);
-			return dataObj;
         }
         
         // get the data
