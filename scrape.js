@@ -202,8 +202,8 @@ console.log('total_items_loaded: ' + total_items_loaded );
                     var cardElements = await page.$x( allItemsX );
                     
 					// Click to open company page
-					const elts = await itemPage.$x( allItemsX );
-					await itemPage.evaluate( elt => elt.click(), elts[ itemIndice ] ); // open the pop up
+					const elts = await page.$x( allItemsX );
+					await page.evaluate( elt => elt.click(), elts[ itemIndice ] ); // open the pop up
 					
                     // company name
                     const companyNameX = "//div/div/h5/following-sibling::h1";
@@ -248,14 +248,14 @@ console.log('total_items_loaded: ' + total_items_loaded );
                     const servicesX = "//h3//following-sibling::div//div";
 					const services = '';
 					try{
-						await itemPage.waitForXPath(servicesX, {timeout:6000});
-						allItems = await itemPage.$x(servicesX);
-						licount = await itemPage.evaluate(allItems => allItems.length, allItems);
+						await page.waitForXPath(servicesX, {timeout:6000});
+						allItems = await page.$x(servicesX);
+						licount = await page.evaluate(allItems => allItems.length, allItems);
 						var sep = '^^^'; // separator
 						for( var i = 0; i < licount; i++ ){
 							if( i == licount - 1 )
 								sep = '';
-							services += await itemPage.evaluate( elt => elt.textContent, allItems[i] ) + sep;
+							services += await page.evaluate( elt => elt.textContent, allItems[i] ) + sep;
 						
 						}
 					}
@@ -271,8 +271,7 @@ console.log('companyName: ' + companyName );
 					dataObj[ 'Services' ] 		= services;
 					// back on the listing page
 					await page.goBack();
-					
-					
+
                     resolve( dataObj );
 
                 })

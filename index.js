@@ -56,7 +56,7 @@ for( const linkObj of links ){
 	
 	
 	try{
-		await page.goto( link, { timeout: 0 } );
+		await page.goto( link, { timeout: 324000 } );
 		await page.waitForXPath( 'title' );
 console.log( "---- ! Fully loaded !" );
 	}
