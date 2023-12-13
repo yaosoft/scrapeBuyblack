@@ -1,0 +1,10 @@
+Scrape Google Business and generate leads with LinkedIn via Google.
+Todo; speed the LinkedIn via Google child process by reducing the amount of 
+data of about pages returning datas.
+
+North Carolina: stop to page 5 // ProtocolError: Network.setUserAgentOverride timed out.
+Ohio stop to page 9 // ProtocolError: Network.setUserAgentOverride timed out.
+Oklahoma stops to page 2 item 7 // ProtocolError: Network.setUserAgentOverride timed out.
+Rhodde Island finished on page 3 // >> Skiped: No company namevfor all companies
+South Dakota stops on page 1 // ProtocolError: Network.setUserAgentOverride
+Tenese stops on page 1 // ProtocolError: Network.setUserAgentOverride
